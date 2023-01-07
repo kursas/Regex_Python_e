@@ -1,0 +1,49 @@
+# -*- coding:utf-8 -*-
+import re
+#Atspausdinkite tą patį teksta taip:
+# 1.
+# Event: Workshop & Tutorial proposals due
+# Date: November 21, 2019
+# 2.
+# Event: Notification of acceptance
+# Date: December 1, 2019
+# ir t.t.
+text = '''Workshop & Tutorial proposals: November 21, 2019
+Notification of acceptance: December 1, 2019
+Workshop & Tutorial websites online: December 18, 2019
+Workshop papers: February 28, 2020
+Workshop paper notifications: March 27, 2020
+Workshop paper camera-ready versions: April 10, 2020
+Tutorial material due (online): April 10, 2020'''
+pattern = re.compile(r'(.*?):(.*)')
+result = pattern.search(text)
+counter = 1
+for (words, date) in re.findall(pattern, text):
+    print(f"{counter}.")
+    counter +=1
+    print(f"Event: {words}\nDate:{date}")
+    
+    #output
+    1.
+Event: Workshop & Tutorial proposals
+Date: November 21, 2019
+2.
+Event: Notification of acceptance
+Date: December 1, 2019
+3.
+Event: Workshop & Tutorial websites online
+Date: December 18, 2019
+4.
+Event: Workshop papers
+Date: February 28, 2020
+5.
+Event: Workshop paper notifications
+Date: March 27, 2020
+6.
+Event: Workshop paper camera-ready versions
+Date: April 10, 2020
+7.
+Event: Tutorial material due (online)
+Date: April 10, 2020
+
+Process finished with exit code 0
