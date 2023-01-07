@@ -1,0 +1,119 @@
+# -*- coding:utf-8 -*-
+import re
+#Išsaugokite visą tekstą iš nuorodos į failą: https://raw.githubusercontent.com/robotautas/kursas/master/RegEx/most_visited.html
+#čia yra html fragmentas, kuriame sudėti lankomiausi puslapiai 2019. Ištraukite šių puslapių sąrašą regex pagalba.
+
+file = open('most_visited.html', 'r')
+html = file.read()
+domain_regex = re.compile(r'\w+\.\w+\.?\w*')
+extracted_domains = domain_regex.findall(html)
+print(f"atspausdintas listas is failo lankomiausi puslapiai:{extracted_domains}")
+count=1
+for i in extracted_domains:
+    print(f'numeris website:{count} lankomiausias websaitas-{i}')
+    count += 1
+    
+ #output
+ atspausdintas listas is failo lankomiausi puslapiai:['youtube.com', 'en.wikipedia.org', 'facebook.com', 'twitter.com', 'amazon.com', 'imdb.com', 'reddit.com', 'pinterest.com', 'ebay.com', 'tripadvisor.com', 'craigslist.org', 'walmart.com', 'instagram.com', 'google.com', 'nytimes.com', 'apple.com', 'linkedin.com', 'indeed.com', 'play.google.com', 'espn.com', 'webmd.com', 'cnn.com', 'homedepot.com', 'etsy.com', 'netflix.com', 'quora.com', 'microsoft.com', 'target.com', 'webster.com', 'forbes.com', 'mapquest.com', 'nih.gov', 'gamepedia.com', 'yahoo.com', 'healthline.com', 'foxnews.com', 'allrecipes.com', 'quizlet.com', 'weather.com', 'bestbuy.com', 'urbandictionary.com', 'mayoclinic.org', 'aol.com', 'genius.com', 'zillow.com', 'usatoday.com', 'glassdoor.com', 'msn.com', 'rottentomatoes.com', 'lowes.com', 'dictionary.com', 'businessinsider.com', 'usnews.com', 'medicalnewstoday.com', 'britannica.com', 'washingtonpost.com', 'usps.com', 'finance.yahoo.com', 'irs.gov', 'yellowpages.com', 'chase.com', 'retailmenot.com', 'accuweather.com', 'wayfair.com', 'go.com', 'live.com', 'login.yahoo.com', 'steamcommunity.com', 'xfinity.com', 'cnet.com', 'ign.com', 'steampowered.com', 'macys.com', 'wikihow.com', 'mail.yahoo.com', 'wiktionary.org', 'cbssports.com', 'cnbc.com', 'bankofamerica.com', 'expedia.com', 'wellsfargo.com', 'groupon.com', 'twitch.tv', 'khanacademy.org', 'theguardian.com', 'paypal.com', 'spotify.com', 'att.com', 'nfl.com', 'realtor.com', 'ca.gov', 'goodreads.com', 'office.com', 'ufl.edu', 'mlb.com', 'foodnetwork.com', 'bbc.com', 'apartments.com', 'npr.org', 'wowhead.com']
+numeris website:1 lankomiausias websaitas-youtube.com
+numeris website:2 lankomiausias websaitas-en.wikipedia.org
+numeris website:3 lankomiausias websaitas-facebook.com
+numeris website:4 lankomiausias websaitas-twitter.com
+numeris website:5 lankomiausias websaitas-amazon.com
+numeris website:6 lankomiausias websaitas-imdb.com
+numeris website:7 lankomiausias websaitas-reddit.com
+numeris website:8 lankomiausias websaitas-pinterest.com
+numeris website:9 lankomiausias websaitas-ebay.com
+numeris website:10 lankomiausias websaitas-tripadvisor.com
+numeris website:11 lankomiausias websaitas-craigslist.org
+numeris website:12 lankomiausias websaitas-walmart.com
+numeris website:13 lankomiausias websaitas-instagram.com
+numeris website:14 lankomiausias websaitas-google.com
+numeris website:15 lankomiausias websaitas-nytimes.com
+numeris website:16 lankomiausias websaitas-apple.com
+numeris website:17 lankomiausias websaitas-linkedin.com
+numeris website:18 lankomiausias websaitas-indeed.com
+numeris website:19 lankomiausias websaitas-play.google.com
+numeris website:20 lankomiausias websaitas-espn.com
+numeris website:21 lankomiausias websaitas-webmd.com
+numeris website:22 lankomiausias websaitas-cnn.com
+numeris website:23 lankomiausias websaitas-homedepot.com
+numeris website:24 lankomiausias websaitas-etsy.com
+numeris website:25 lankomiausias websaitas-netflix.com
+numeris website:26 lankomiausias websaitas-quora.com
+numeris website:27 lankomiausias websaitas-microsoft.com
+numeris website:28 lankomiausias websaitas-target.com
+numeris website:29 lankomiausias websaitas-webster.com
+numeris website:30 lankomiausias websaitas-forbes.com
+numeris website:31 lankomiausias websaitas-mapquest.com
+numeris website:32 lankomiausias websaitas-nih.gov
+numeris website:33 lankomiausias websaitas-gamepedia.com
+numeris website:34 lankomiausias websaitas-yahoo.com
+numeris website:35 lankomiausias websaitas-healthline.com
+numeris website:36 lankomiausias websaitas-foxnews.com
+numeris website:37 lankomiausias websaitas-allrecipes.com
+numeris website:38 lankomiausias websaitas-quizlet.com
+numeris website:39 lankomiausias websaitas-weather.com
+numeris website:40 lankomiausias websaitas-bestbuy.com
+numeris website:41 lankomiausias websaitas-urbandictionary.com
+numeris website:42 lankomiausias websaitas-mayoclinic.org
+numeris website:43 lankomiausias websaitas-aol.com
+numeris website:44 lankomiausias websaitas-genius.com
+numeris website:45 lankomiausias websaitas-zillow.com
+numeris website:46 lankomiausias websaitas-usatoday.com
+numeris website:47 lankomiausias websaitas-glassdoor.com
+numeris website:48 lankomiausias websaitas-msn.com
+numeris website:49 lankomiausias websaitas-rottentomatoes.com
+numeris website:50 lankomiausias websaitas-lowes.com
+numeris website:51 lankomiausias websaitas-dictionary.com
+numeris website:52 lankomiausias websaitas-businessinsider.com
+numeris website:53 lankomiausias websaitas-usnews.com
+numeris website:54 lankomiausias websaitas-medicalnewstoday.com
+numeris website:55 lankomiausias websaitas-britannica.com
+numeris website:56 lankomiausias websaitas-washingtonpost.com
+numeris website:57 lankomiausias websaitas-usps.com
+numeris website:58 lankomiausias websaitas-finance.yahoo.com
+numeris website:59 lankomiausias websaitas-irs.gov
+numeris website:60 lankomiausias websaitas-yellowpages.com
+numeris website:61 lankomiausias websaitas-chase.com
+numeris website:62 lankomiausias websaitas-retailmenot.com
+numeris website:63 lankomiausias websaitas-accuweather.com
+numeris website:64 lankomiausias websaitas-wayfair.com
+numeris website:65 lankomiausias websaitas-go.com
+numeris website:66 lankomiausias websaitas-live.com
+numeris website:67 lankomiausias websaitas-login.yahoo.com
+numeris website:68 lankomiausias websaitas-steamcommunity.com
+numeris website:69 lankomiausias websaitas-xfinity.com
+numeris website:70 lankomiausias websaitas-cnet.com
+numeris website:71 lankomiausias websaitas-ign.com
+numeris website:72 lankomiausias websaitas-steampowered.com
+numeris website:73 lankomiausias websaitas-macys.com
+numeris website:74 lankomiausias websaitas-wikihow.com
+numeris website:75 lankomiausias websaitas-mail.yahoo.com
+numeris website:76 lankomiausias websaitas-wiktionary.org
+numeris website:77 lankomiausias websaitas-cbssports.com
+numeris website:78 lankomiausias websaitas-cnbc.com
+numeris website:79 lankomiausias websaitas-bankofamerica.com
+numeris website:80 lankomiausias websaitas-expedia.com
+numeris website:81 lankomiausias websaitas-wellsfargo.com
+numeris website:82 lankomiausias websaitas-groupon.com
+numeris website:83 lankomiausias websaitas-twitch.tv
+numeris website:84 lankomiausias websaitas-khanacademy.org
+numeris website:85 lankomiausias websaitas-theguardian.com
+numeris website:86 lankomiausias websaitas-paypal.com
+numeris website:87 lankomiausias websaitas-spotify.com
+numeris website:88 lankomiausias websaitas-att.com
+numeris website:89 lankomiausias websaitas-nfl.com
+numeris website:90 lankomiausias websaitas-realtor.com
+numeris website:91 lankomiausias websaitas-ca.gov
+numeris website:92 lankomiausias websaitas-goodreads.com
+numeris website:93 lankomiausias websaitas-office.com
+numeris website:94 lankomiausias websaitas-ufl.edu
+numeris website:95 lankomiausias websaitas-mlb.com
+numeris website:96 lankomiausias websaitas-foodnetwork.com
+numeris website:97 lankomiausias websaitas-bbc.com
+numeris website:98 lankomiausias websaitas-apartments.com
+numeris website:99 lankomiausias websaitas-npr.org
+numeris website:100 lankomiausias websaitas-wowhead.com
+
+Process finished with exit code 0
