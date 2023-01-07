@@ -1,0 +1,23 @@
+# -*- coding:utf-8 -*-
+import re
+# Parašykite funkciją,
+# kuri į parametrus priimtų tekstą ir žodžių,
+# kuriuos reikia jame išcenzūruoti sąrašą.
+# Pvz, žodis "kvaraba" yra baisus keiksmažodis,
+# ir mums reikia duotame tekste pakeisti k*****a.
+# Pradėkite maždaug taip:
+
+def cenzura(tekstas, *keiksmai):
+    swear_words = [*keiksmai]
+    for _ in swear_words:
+        pattern = re.compile(_, re.I)
+        x = len(_)
+        tekstas = pattern.sub(f'{_[0]}{"*" * (x - 2)}{_[-1]}', tekstas)
+    print(tekstas)
+cenzura('baisūs žodžiai, tokie kaip Kvaraba, žaltys, zaltys, žaltysžaltysžaltys..', 'tokie', 'kvaraba', 'žaltys')
+
+#output
+baisūs žodžiai, t***e kaip k*****a, ž****s, zaltys, ž****sž****sž****s..
+
+Process finished with exit code 0
+
