@@ -1,0 +1,15 @@
+import re
+#Parašykite regex išraišką, kad iš duoto teksto (stringo) ištrauktumėte visus el. pašto adresus.
+#Kad atvazduotu lietuviškas raides PyCharm programoje
+#"\natlikite sekanti veiksmą:File-->Settings-->Editor-->File Encoding-->Global Encoding::UTF-8-->Project Encoding::UTF-8-->Apply-->Ok.
+s = 'Visais klausimais rašykite- vardėnis-pavardėnis@gmail.com, arba į secondemail@yahoo.com, atsakysiu iškart. Arba parašykite mano padėjėjui secretary@gmail.com!'
+emails = re.findall(r'[\w\.-]+@[\w\.-]+', s)
+for email in emails:
+    print(email)
+    
+#output
+vardėnis-pavardėnis@gmail.com
+secondemail@yahoo.com
+secretary@gmail.com
+
+Process finished with exit code 0
